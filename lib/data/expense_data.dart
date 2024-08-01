@@ -12,6 +12,7 @@ class ExpenseData extends ChangeNotifier {
   void prepareData() {
     if (db.readData().isNotEmpty) {
       overallExpenseList = db.readData();
+      notifyListeners();
     }
   }
 

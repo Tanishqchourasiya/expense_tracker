@@ -18,7 +18,6 @@ class _HomePageState extends State<HomePage> {
   @override
   void initState() {
     super.initState();
-    // Ensure context is available by using a post-frame callback
     WidgetsBinding.instance!.addPostFrameCallback((_) {
       Provider.of<ExpenseData>(context, listen: false).prepareData();
     });
@@ -32,7 +31,6 @@ class _HomePageState extends State<HomePage> {
         content: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            // Name TextField
             TextField(
               controller: newExpenseNameController,
               decoration: InputDecoration(
@@ -40,7 +38,6 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
 
-            // Amount TextField
             TextField(
               controller: newExpenseAmountController,
               keyboardType: TextInputType.number,
@@ -51,12 +48,11 @@ class _HomePageState extends State<HomePage> {
           ],
         ),
         actions: [
-          // Cancel button
           TextButton(
             onPressed: cancel,
             child: Text('Cancel'),
           ),
-          // Save button
+
           TextButton(
             onPressed: save,
             child: Text('Save'),

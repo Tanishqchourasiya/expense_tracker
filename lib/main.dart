@@ -7,10 +7,8 @@ import 'pages/home_page.dart';
 
 void main() async{
 
-  // initialing hive
   await Hive.initFlutter();
 
-  //open hive box
   await Hive.openBox("expense_database");
 
   runApp(const MyApp());
